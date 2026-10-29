@@ -1,0 +1,15 @@
+---
+layout: default
+title: Writing
+---
+<p class="back"><a href="{{ '/' | relative_url }}">← Jacob Dugan</a></p>
+<h1>Writing</h1>
+{% if site.posts.size > 0 %}
+<ul class="plain">
+  {% for post in site.posts %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="meta">· {{ post.date | date: "%b %-d, %Y" }}</span></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="meta">Nothing published yet.</p>
+{% endif %}

@@ -1,0 +1,69 @@
+---
+layout: default
+---
+<header>
+  <h1>Jacob Dugan</h1>
+  <p class="lede">Machine Learning Engineer at Stats Perform. I build production LLM agents and the evaluation systems that decide what ships.</p>
+  <nav aria-label="Contact">
+    <a href="mailto:jake@jakedugan.com">Email</a> ·
+    <a href="https://github.com/jakedugi">GitHub</a> ·
+    <a href="https://www.linkedin.com/in/jakedugan">LinkedIn</a>
+  </nav>
+</header>
+
+<section aria-labelledby="work">
+  <h2 id="work">Selected work</h2>
+
+  <article>
+    <h3>Evaluation for a sports-data LLM agent</h3>
+    <p>Led the evaluation platform for a pre-release agent. Evaluations on 54 service changes informed model and provider decisions and caught regressions before release. A scoring stack of deterministic fact checks plus an LLM judge cut structured-output failures from 8.0% to 0 of 1,744.</p>
+  </article>
+
+  <article>
+    <h3>Structured retrieval for LLM agents</h3>
+    <p>Added a GraphQL retrieval path alongside the legacy feed workflow. In a controlled 177-case A/B test, run errors fell 83%, input tokens 46% and median latency 30%.</p>
+  </article>
+
+  <article>
+    <h3>Reliable LLM services</h3>
+    <p>Built and operate the service behind match summaries in the Opta Arena football app: four live data feeds, multi-provider routing with fallbacks, circuit breakers and cost caps. Nine months in production at a 0.18% 5xx rate.</p>
+  </article>
+
+  <article>
+    <h3>Legal risk in corporate speech</h3>
+    <p>MSc dissertation, Edinburgh. A leakage audit falsified the quote-level hypothesis and led to a calibrated case-level model, released with an open dataset of 24K quotes across 125 federal cases.</p>
+    <p class="links">
+      <a href="https://github.com/jakedugi/corp-speech-modeling-repo">Modeling</a> ·
+      <a href="https://github.com/jakedugi/corp-speech-data-repo">Data pipeline</a> ·
+      <a href="https://doi.org/10.5281/zenodo.16934610">Dataset (DOI)</a>
+    </p>
+  </article>
+
+  <article>
+    <h3>Earlier research</h3>
+    <p>Stroke-care access mapping across 84K U.S. census tracts, presented as a first-author abstract at the International Stroke Conference 2024. 3D variational autoencoder for neuroimaging data augmentation.</p>
+    <p class="links">
+      <a href="https://doi.org/10.1161/str.55.suppl_1.TMP41">Abstract (DOI)</a>
+    </p>
+  </article>
+</section>
+
+{% if site.posts.size > 0 %}
+<section aria-labelledby="writing">
+  <h2 id="writing">Writing</h2>
+  <ul class="plain">
+    {% for post in site.posts limit: 5 %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="meta">· {{ post.date | date: "%b %Y" }}</span></li>
+    {% endfor %}
+  </ul>
+  {% if site.posts.size > 5 %}<p class="links"><a href="{{ '/writing/' | relative_url }}">All writing</a></p>{% endif %}
+</section>
+{% endif %}
+
+<section aria-labelledby="education">
+  <h2 id="education">Education</h2>
+  <ul class="plain">
+    <li><strong>MSc Artificial Intelligence</strong>, University of Edinburgh, 2025</li>
+    <li><strong>BA Economics</strong>, minor in Data Science, magna cum laude, Pepperdine University, 2023</li>
+  </ul>
+</section>

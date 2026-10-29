@@ -1,0 +1,14 @@
+title: Jacob Dugan
+description: Machine Learning Engineer at Stats Perform. I build production LLM agents and the evaluation systems that decide what ships.
+url: "https://jakedugan.com"
+author: Jacob Dugan
+
+permalink: /writing/:title/
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - README.md
